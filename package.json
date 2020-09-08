@@ -4,7 +4,7 @@
   "description": "A tool to find public helth places",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "html-validate index.html"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,17 @@
     "maps",
     "lapsus"
   ],
-  "author": "Eike Mell; Alissonfelipe1234",
+  "author": "Eike Mello; Alissonfelipe1234",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eikemello/projectLapsus/issues"
   },
-  "homepage": "https://github.com/eikemello/projectLapsus#readme"
+  "homepage": "https://github.com/eikemello/projectLapsus#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "pigeon-maps": "^0.16.1"
+  },
+  "devDependencies": {
+    "html-validate": "^3.2.0"
+  }
 }
