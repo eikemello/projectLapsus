@@ -4,7 +4,8 @@
   "description": "A tool to find public helth places",
   "main": "index.html",
   "scripts": {
-    "test": "html-validate index.html"
+    "test": "html-validate index.html",
+    "style": "node-sass --output-style expanded --source-map true --source-map-contents true scripts/scss/style.scss scripts/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   "homepage": "https://github.com/eikemello/projectLapsus#readme",
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "pigeon-maps": "^0.16.1"
+    "node-sass": "^4.14.1",
+    "pigeon-maps": "^0.16.1",
+    "sass": "^1.26.10"
   },
   "devDependencies": {
     "html-validate": "^3.2.0"
