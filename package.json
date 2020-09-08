@@ -1,0 +1,24 @@
+{
+  "name": "proteto-lapsus",
+  "version": "0.5.0",
+  "description": "A tool to find public helth places",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eikemello/projectLapsus.git"
+  },
+  "keywords": [
+    "SUS",
+    "maps",
+    "lapsus"
+  ],
+  "author": "Eike Mell; Alissonfelipe1234",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eikemello/projectLapsus/issues"
+  },
+  "homepage": "https://github.com/eikemello/projectLapsus#readme"
+}
