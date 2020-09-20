@@ -11,8 +11,8 @@
     <script src="/scripts/js/mapsed.js"></script>
     <script src="/scripts/js/controller.js"></script>
     <script>
-        let obj_ubs
-        var _places = []
+        // initializing variables and call three random places
+        let _places = []
         $.getJSON("/assets/json/estabelecimentos_campinas.json", function (json) {
             show_three(json)
             Object.values(json).forEach(ubs => {
@@ -35,149 +35,6 @@
             });
 
         })
-        var _snazzyMaps = [
-            {
-                "name": "Avocado",
-                "theme":
-                    [{ "featureType": "water", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "color": "#aee2e0" }] }, { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [{ "color": "#abce83" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "color": "#769E72" }] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#7B8758" }] }, { "featureType": "poi", "elementType": "labels.text.stroke", "stylers": [{ "color": "#EBF4A4" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }, { "color": "#8dab68" }] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#5B5B3F" }] }, { "featureType": "road", "elementType": "labels.text.stroke", "stylers": [{ "color": "#ABCE83" }] }, { "featureType": "road", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#A4C67D" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#9BBF72" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#EBF4A4" }] }, { "featureType": "transit", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "visibility": "on" }, { "color": "#87ae79" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#7f2200" }, { "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text.stroke", "stylers": [{ "color": "#ffffff" }, { "visibility": "on" }, { "weight": 4.1 }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#495421" }] }, { "featureType": "administrative.neighborhood", "elementType": "labels", "stylers": [{ "visibility": "off" }] }]
-            }
-            ,
-            {
-                "name": "Pale Dawn",
-                "theme":
-                    [{ "featureType": "water", "stylers": [{ "visibility": "on" }, { "color": "#acbcc9" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f2e5d4" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#c5c6c6" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#e4d7c6" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#fbfaf7" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#c5dac6" }] }, { "featureType": "administrative", "stylers": [{ "visibility": "on" }, { "lightness": 33 }] }, { "featureType": "road" }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 20 }] }, {}, { "featureType": "road", "stylers": [{ "lightness": 20 }] }]
-            }
-            ,
-            {
-                "name": "Blue water",
-                "theme":
-                    [{ "featureType": "water", "stylers": [{ "color": "#46bcec" }, { "visibility": "on" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "road", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road.highway", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "transit", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "stylers": [{ "visibility": "off" }] }]
-            }
-        ];
-        
-
-
-        function onThemeChange(me, mapsed) {
-            var themeName = me.val(),
-                themeJSON = ""
-                ;
-
-            for (var i = 0; i < _snazzyMaps.length; i++) {
-                var currTheme = _snazzyMaps[i];
-
-                if (currTheme.name === themeName) {
-                    // found it, so apply the theme
-                    mapsed.getGoogleMap().setOptions({ styles: currTheme.theme });
-                    break;
-                }
-            }
-
-        }
-
-
-        function getPlaceHtml(details) {
-            var html =
-                "Nome:  " + details.nome + "<br/>"+
-                "Rua:  " + details.street + "<br/>"+
-                "Numero:  " + details.numero + "<br/>"+
-                "Bairro:  " + details.bairro + "<br/>"+
-                "CEP:  "    + details.CEP + "<br/>"+
-                "Cidade:  " + details.cidade + "<br/>"+
-                "Estado:  " + details.estado + "<br/>"+
-                "Telefone:  " + details.telefone + "<br/>"
-            return html;
-        }
-
-        function fullWindowExample() {
-
-            $.fn.mapsed({
-                mapOptions: {
-                    zoom: 15,
-                    center: new google.maps.LatLng(-22.909436, -47.081049),
-                    styles: _snazzyMaps[2]["theme"]
-                },
-
-                // Adds a predictive search box
-                searchOptions: {
-                    enabled: true,
-                    placeholder: "Procure por bairros ou ruas"
-                },
-
-                // Turn geo button on
-                allowGeo: true,
-                showOnLoad: _places,
-                allowAdd: false,
-                confirmDelete: false,
-                showHelpOnLoad: false,
-
-                onSelect: function (m, details) {
-                    var msg = getPlaceHtml(details);
-
-                    m.showMsg("Informações sobre a UBS", msg);
-
-                    return true;
-                },
-                
-                getMarkerImage: function (m, markerType, title) {
-                    var imageUrl = "";
-
-                
-                    imageUrl = "/assets/img/icons/icon_map.png";
-
-                    return {
-                        url: imageUrl,
-                        size: new google.maps.Size(52, 52),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(52, 52)
-                    };
-                },
-
-                // shows additional instructions to the user
-                getHelpWindow: function (m) {
-                    var html =
-                        "<div class='mapsed-help'>" +
-                        "Encontre aqui sobre todas UBS de Campinas <br> Clique em um ponto para mais informações" +
-                        "</div>"
-                        ;
-                    return html;
-                },
-                
-
-                onClose: function (mapsed) {
-                    var closeMap = confirm("Deseja fechar o mapa?");
-                    return closeMap;
-                },
-
-             onPreInit: function (mapsed) {
-                    var html = "",
-                        $select = null,
-                        $mapContainer = null
-                        ;
-
-                    // build up the theme picker
-                    html += "<select id='themePicker' title='Pick an alternative map style...' class='mapsed-control-button'>";
-                    for (var i = 0; i < _snazzyMaps.length; i++) {
-                        var theme = _snazzyMaps[i];
-                        html += "<option value='" + theme.name + "'>" + theme.name + "</option>";
-                    }
-                    html += "</select>";
-
-                    $select = mapsed.addMapControl(html, google.maps.ControlPosition.TOP_RIGHT);
-
-                    // wire up the change event to pick a new theme
-                    $select.on("change", function () {
-                        onThemeChange($(this), mapsed);
-                    });
-                },
-
-                // Fired once the map has completed loading
-                onInit: function (m) {
-
-                }
-
-            });
-
-        }
     </script>
 </head>
 
@@ -196,7 +53,7 @@
             </div>
         </div>
         <div class="row text-center">
-            <div onclick="fullWindowExample()" class="col-2 mx-auto mt-5">
+            <div onclick="openFullMap()" class="col-2 mx-auto mt-5">
                 <img class="img-fluid" src="https://image.flaticon.com/icons/png/512/235/235861.png"
                     alt="Abrir mapa das UBS">
                 <h4>Abrir o mapa</h4>

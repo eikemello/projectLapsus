@@ -20,10 +20,153 @@ function give_ubs_card(name, img, address, number, neighborhood, city, state, zi
 }
 function show_three(data) {
     for (let index = 0; index < 3; index++) {
-        let hospital = Math.floor(Math.random() * 66)
-        let html = give_ubs_card(data[hospital].no_fantasia, 'data:image/jpeg;base64,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', data[hospital].no_logradouro, data[hospital].nu_endereco, data[hospital].no_bairro, data[hospital].cidade, data[hospital].uf, data[hospital].co_cep, data[hospital].nu_telefone, false)
+        let hospital = Math.floor(Math.random() * 10)
+        let html = give_ubs_card(data[hospital].no_fantasia, data[hospital].image, data[hospital].no_logradouro, data[hospital].nu_endereco, data[hospital].no_bairro, data[hospital].cidade, data[hospital].uf, data[hospital].co_cep, data[hospital].nu_telefone, false)
         $('#mainly_hospitals').append(html)
         
     }
+}
+let _snazzyMaps = [
+    {
+        "name": "Avocado",
+        "theme":
+            [{ "featureType": "water", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "color": "#aee2e0" }] }, { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [{ "color": "#abce83" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "color": "#769E72" }] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#7B8758" }] }, { "featureType": "poi", "elementType": "labels.text.stroke", "stylers": [{ "color": "#EBF4A4" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }, { "color": "#8dab68" }] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#5B5B3F" }] }, { "featureType": "road", "elementType": "labels.text.stroke", "stylers": [{ "color": "#ABCE83" }] }, { "featureType": "road", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#A4C67D" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#9BBF72" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#EBF4A4" }] }, { "featureType": "transit", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "visibility": "on" }, { "color": "#87ae79" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#7f2200" }, { "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text.stroke", "stylers": [{ "color": "#ffffff" }, { "visibility": "on" }, { "weight": 4.1 }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#495421" }] }, { "featureType": "administrative.neighborhood", "elementType": "labels", "stylers": [{ "visibility": "off" }] }]
+    }
+    ,
+    {
+        "name": "Pale Dawn",
+        "theme":
+            [{ "featureType": "water", "stylers": [{ "visibility": "on" }, { "color": "#acbcc9" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f2e5d4" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#c5c6c6" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#e4d7c6" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#fbfaf7" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#c5dac6" }] }, { "featureType": "administrative", "stylers": [{ "visibility": "on" }, { "lightness": 33 }] }, { "featureType": "road" }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 20 }] }, {}, { "featureType": "road", "stylers": [{ "lightness": 20 }] }]
+    }
+    ,
+    {
+        "name": "Blue water",
+        "theme":
+            [{ "featureType": "water", "stylers": [{ "color": "#46bcec" }, { "visibility": "on" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "road", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road.highway", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "transit", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "stylers": [{ "visibility": "off" }] }]
+    }
+];
+
+
+
+function onThemeChange(me, mapsed) {
+    let themeName = me.val(),
+        themeJSON = ""
+        ;
+
+    for (let i = 0; i < _snazzyMaps.length; i++) {
+        let currTheme = _snazzyMaps[i];
+
+        if (currTheme.name === themeName) {
+            // found it, so apply the theme
+            mapsed.getGoogleMap().setOptions({ styles: currTheme.theme });
+            break;
+        }
+    }
+
+}
+
+
+function getPlaceHtml(details) {
+    let html =
+        "Nome:  " + details.nome + "<br/>"+
+        "Rua:  " + details.street + "<br/>"+
+        "Numero:  " + details.numero + "<br/>"+
+        "Bairro:  " + details.bairro + "<br/>"+
+        "CEP:  "    + details.CEP + "<br/>"+
+        "Cidade:  " + details.cidade + "<br/>"+
+        "Estado:  " + details.estado + "<br/>"+
+        "Telefone:  " + details.telefone + "<br/>"
+    return html;
+}
+
+function openFullMap() {
+
+    $.fn.mapsed({
+        mapOptions: {
+            zoom: 15,
+            center: new google.maps.LatLng(-22.909436, -47.081049),
+            styles: _snazzyMaps[2]["theme"]
+        },
+
+        // Adds a predictive search box
+        searchOptions: {
+            enabled: true,
+            placeholder: "Procure por bairros ou ruas"
+        },
+
+        // Turn geo button on
+        allowGeo: true,
+        showOnLoad: _places,
+        allowAdd: false,
+        confirmDelete: false,
+        showHelpOnLoad: false,
+
+        onSelect: function (m, details) {
+            let msg = getPlaceHtml(details);
+
+            m.showMsg("Informações sobre a UBS", msg);
+
+            return true;
+        },
+        
+        getMarkerImage: function (m, markerType, title) {
+            let imageUrl = "";
+
+        
+            imageUrl = "/assets/img/icons/icon_map.png";
+
+            return {
+                url: imageUrl,
+                size: new google.maps.Size(52, 52),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(52, 52)
+            };
+        },
+
+        // shows additional instructions to the user
+        getHelpWindow: function (m) {
+            let html =
+                "<div class='mapsed-help'>" +
+                "Encontre aqui sobre todas UBS de Campinas <br> Clique em um ponto para mais informações" +
+                "</div>"
+                ;
+            return html;
+        },
+        
+
+        onClose: function (mapsed) {
+            let closeMap = confirm("Deseja fechar o mapa?");
+            return closeMap;
+        },
+
+     onPreInit: function (mapsed) {
+            let html = "",
+                $select = null,
+                $mapContainer = null
+                ;
+
+            // build up the theme picker
+            html += "<select id='themePicker' title='Pick an alternative map style...' class='mapsed-control-button'>";
+            for (let i = 0; i < _snazzyMaps.length; i++) {
+                let theme = _snazzyMaps[i];
+                html += "<option value='" + theme.name + "'>" + theme.name + "</option>";
+            }
+            html += "</select>";
+
+            $select = mapsed.addMapControl(html, google.maps.ControlPosition.TOP_RIGHT);
+
+            // wire up the change event to pick a new theme
+            $select.on("change", function () {
+                onThemeChange($(this), mapsed);
+            });
+        },
+
+        // Fired once the map has completed loading
+        onInit: function (m) {
+
+        }
+
+    });
+
 }
 
