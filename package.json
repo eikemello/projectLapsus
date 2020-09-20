@@ -24,8 +24,10 @@
   "homepage": "https://github.com/eikemello/projectLapsus#readme",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "pigeon-maps": "^0.16.1",
+    "popper.js": "^1.16.1",
     "sass": "^1.26.10"
   },
   "devDependencies": {
